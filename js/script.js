@@ -1,4 +1,6 @@
 const container = document.querySelector('.container');
+container.style = 'display: flex; width: 90%; border: 1px solid green; height: 90%; background: gray; flex-wrap: wrap; margin: 12px auto';
+
 const submit = document.createElement('button');
 submit.textContent = 'submit';
 document.body.appendChild(submit);
@@ -7,8 +9,8 @@ submit.style = 'border: none; background-color: blue; color: white; padding: 15p
 for(let i = 0; i < 18; i++) {
   const square = document.createElement('div');
   square.style = 'width: 100px; height: 100px; background: pink; border: 1px solid blue';
+  square.classList.add('square');
   container.appendChild(square)
-  container.style = 'display: flex; width: 90%; border: 1px solid green; height: 90%; background: gray; flex-wrap: wrap; margin: 12px auto';
 }
 
 let value;
@@ -17,11 +19,18 @@ submit.addEventListener('click', () => {
 
   container.innerHTML = '';
 
-  container.style = 'display: flex; width: 90%; border: 1px solid green; height: 90%; background: gray; flex-wrap: wrap; margin: 12px auto';
-
-for(let i = 0; i < value * value; i++) {
+  for(let i = 0; i < value * value; i++) {
     const square = document.createElement('div');
     square.style = 'width: 100px; height: 100px; background: pink; border: 1px solid blue';
-    container.appendChild(square)
+    container.appendChild(square);
+    square.classList.add('square');
+    addEventListener
 }
+});
+
+const squares = document.querySelectorAll('.square');
+squares.forEach(square => {
+  square.addEventListener('mouseover', () => {
+    square.style.backgroundColor = 'blue';
+  });
 });
