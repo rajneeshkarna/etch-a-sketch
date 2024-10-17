@@ -1,14 +1,14 @@
 const container = document.querySelector('.container');
-container.style = 'display: flex; width: 90%; border: 1px solid green; height: 90%; background: gray; flex-wrap: wrap; margin: 12px auto';
+container.style = 'display: flex; width: 960px; border: 1px solid green; height: 550px; background: gray; flex-wrap: wrap; margin: 12px auto';
 
 const submit = document.createElement('button');
 submit.textContent = 'submit';
 document.body.appendChild(submit);
 submit.style = 'border: none; background-color: blue; color: white; padding: 15px 24px; font-size: 16px; font-weight: 600; cursor: pointer; text-transform: capitalize'
 
-for(let i = 0; i < 18; i++) {
+for(let i = 0; i < 16 * 16; i++) {
   const square = document.createElement('div');
-  square.style = 'width: 100px; height: 100px; background: pink; border: 1px solid blue';
+  square.style = `width: 63px; height: 31px; background: pink; border: 1px solid blue`;
   square.classList.add('square');
   container.appendChild(square)
 }
@@ -22,15 +22,24 @@ submit.addEventListener('click', () => {
   for(let i = 0; i < value * value; i++) {
     const square = document.createElement('div');
     square.style = 'width: 100px; height: 100px; background: pink; border: 1px solid blue';
-    container.appendChild(square);
     square.classList.add('square');
-    addEventListener
+    container.appendChild(square);
+    square.addEventListener('mouseover', () => {
+      const red = Math.floor(Math.random() * 256);
+      const green = Math.floor(Math.random() * 256);
+      const blue = Math.floor(Math.random() * 256);
+      return square.style.background = `rgb(${red}, ${green}, ${blue})`;
+    });
+    
 }
 });
 
 const squares = document.querySelectorAll('.square');
 squares.forEach(square => {
   square.addEventListener('mouseover', () => {
-    square.style.backgroundColor = 'blue';
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+    return square.style.background = `rgb(${red}, ${green}, ${blue})`;
   });
 });
