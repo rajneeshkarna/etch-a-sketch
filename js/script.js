@@ -4,7 +4,7 @@ container.style = 'display: flex; width: 960px; border: 1px solid green; height:
 const submit = document.createElement('button');
 submit.textContent = 'submit';
 document.body.appendChild(submit);
-submit.style = 'border: none; background-color: blue; color: white; padding: 15px 24px; font-size: 16px; font-weight: 600; cursor: pointer; text-transform: capitalize'
+submit.style = 'border: none; background-color: blue; color: white; padding: 15px 24px; font-size: 16px; font-weight: 600; cursor: pointer; text-transform: capitalize; display: block; margin: 24px auto'
 
 for(let i = 0; i < 16 * 16; i++) {
   const square = document.createElement('div');
