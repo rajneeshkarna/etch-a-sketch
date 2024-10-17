@@ -1,5 +1,5 @@
 const container = document.querySelector('.container');
-container.style = 'display: flex; width: 960px; border: 1px solid green; height: 550px; background: gray; flex-wrap: wrap; margin: 12px auto';
+container.style = 'display: flex; width: 960px; border: 1px solid green; height: 550px; flex-wrap: wrap; margin: 12px auto';
 
 const submit = document.createElement('button');
 submit.textContent = 'submit';
@@ -8,7 +8,7 @@ submit.style = 'border: none; background-color: blue; color: white; padding: 15p
 
 for(let i = 0; i < 16 * 16; i++) {
   const square = document.createElement('div');
-  square.style = `width: 63px; height: 31px; background: pink; border: 1px solid blue`;
+  square.style = `width: 63px; height: 31px; border: none`;
   square.classList.add('square');
   container.appendChild(square)
 }
@@ -21,7 +21,7 @@ submit.addEventListener('click', () => {
 
   for(let i = 0; i < value * value; i++) {
     const square = document.createElement('div');
-    square.style = 'width: 100px; height: 100px; background: pink; border: 1px solid blue';
+    square.style = `width: ${(960 - 2 * value)/value}px; height: ${(550 - 2 * value)/value}px`;
     square.classList.add('square');
     container.appendChild(square);
     square.addEventListener('mouseover', () => {
